@@ -16,18 +16,18 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.0.0',
+    version='0.0.0',
 
     description='A progressbar that works well for log files and also Jupyter notebooks',
     # Fix windows newlines.
     long_description=long_description.replace('\r\n', '\n'),
 
     # The project's main homepage.
-    url='https://github.com/blackhc/progressbar',
+    url='https://github.com/blackhc/progress_bar',
 
     # Author details
     author='Andreas @blackhc Kirsch',
-    author_email='blackhc+progressbar@gmail.com',
+    author_email='blackhc+progress_bar@gmail.com',
 
     # Choose your license
     license='MIT',
@@ -56,7 +56,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=['blackhc.progressbar'],
+    packages=['blackhc.progress_bar'],
 
     package_dir={'': 'src'},
 
