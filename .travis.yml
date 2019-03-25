@@ -5,3 +5,4 @@ install:
   - pip install -e .[dev,test]
 script:
   - python setup.py test
+  - codecov
