@@ -7,15 +7,15 @@ A progress bar that is either using TQDM for nice outputs internally, or a log-f
 ## Example
 
 ```python
-from blackhc.progress_bar import with_progress_bar, use_tqdm
-
-use_tqdm = False
+from blackhc.progress_bar import with_progress_bar
 
 for _ in with_progress_bar(range(100000)):
     pass
 ```
 
-Without `use_tqdm = False`, the package will decide whether to use tqdm or not based on whether output is attached to a terminal or not.
+The package will decide whether to use tqdm or not based on whether output is attached to a terminal or not.
+
+You can use `blackhc.progress_bar.use_tqdm = True/False` to force it to use TQDM (or not).
 
 ## Installation
 
