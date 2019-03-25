@@ -1,0 +1,5 @@
+[run]
+source=src/blackhc/progress_bar/*
+omit=
+    */tests/*
+    setup.py

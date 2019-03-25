@@ -16,7 +16,9 @@ def create_progress_bar(length, tqdm_args=None):
 
 # TODO(blackhc): detect Jupyter notebooks/Ipython as use TQDM
 class ProgressBarIterable:
-    def __init__(self, iterable, length=None, length_unit=None, unit_scale=None, tqdm_args=None):
+    def __init__(
+        self, iterable, length=None, length_unit=None, unit_scale=None, tqdm_args=None
+    ):
         self.iterable = iterable
         self.tqdm_args = tqdm_args
 
@@ -25,7 +27,9 @@ class ProgressBarIterable:
             self.length_unit = length_unit
         else:
             if length_unit is not None:
-                raise AssertionError('Cannot specify length_unit without custom length!')
+                raise AssertionError(
+                    "Cannot specify length_unit without custom length!"
+                )
             self.length_unit = 1
 
         self.unit_scale = unit_scale or 1
@@ -37,7 +41,7 @@ class ProgressBarIterable:
             try:
                 length = len(self.iterable)
             except (TypeError, AttributeError):
-                raise NotImplementedError('Need a total number of iterations!')
+                raise NotImplementedError("Need a total number of iterations!")
 
         progress_bar = create_progress_bar(length * self.unit_scale, self.tqdm_args)
         progress_bar.start()
@@ -47,6 +51,13 @@ class ProgressBarIterable:
         progress_bar.finish()
 
 
-def with_progress_bar(iterable, length=None, length_unit=None, unit_scale=None, tqdm_args=None):
-    return ProgressBarIterable(iterable, length=length, length_unit=length_unit, unit_scale=unit_scale,
-                               tqdm_args=tqdm_args)
+def with_progress_bar(
+    iterable, length=None, length_unit=None, unit_scale=None, tqdm_args=None
+):
+    return ProgressBarIterable(
+        iterable,
+        length=length,
+        length_unit=length_unit,
+        unit_scale=unit_scale,
+        tqdm_args=tqdm_args,
+    )

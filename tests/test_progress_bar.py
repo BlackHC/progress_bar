@@ -26,4 +26,3 @@ def test_log_friendly_coverage():
     pb.use_tqdm = False
     for _ in pb.with_progress_bar(range(100)):
         pass
-
