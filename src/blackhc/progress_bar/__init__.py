@@ -1,4 +1,5 @@
 from blackhc.progress_bar.details import TQDMProgressBar, LogFriendlyProgressBar
+from blackhc.progress_bar.progress_bar import ProgressBar
 import sys
 
 use_tqdm = True
