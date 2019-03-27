@@ -13,9 +13,10 @@ for _ in with_progress_bar(range(100000)):
     pass
 ```
 
-The package will decide whether to use tqdm or not based on whether output is attached to a terminal or not.
+The package will decide whether to use tqdm or not based on whether output is attached to a terminal or not, 
+or whether the cell is executed within a Jupyter Notebook or IPython terminal.
 
-You can use `blackhc.progress_bar.use_tqdm = True/False` to force it to use TQDM (or not).
+You can use `blackhc.progress_bar.use_tqdm = True/False` to force TQDM (or force disable it).
 
 ## Installation
 
