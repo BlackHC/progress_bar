@@ -19,7 +19,7 @@ def _isnotebook():
 
 
 def create_progress_bar(length, tqdm_args=None):
-    if use_tqdm:
+    if use_tqdm is not None:
         local_use_tqdm = use_tqdm
     else:
         local_use_tqdm = sys.stdout.isatty() or _isnotebook()

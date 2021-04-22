@@ -1,6 +1,6 @@
 import time
 import sys
-import tqdm
+from tqdm.auto import tqdm
 
 from blackhc.progress_bar.progress_bar import ProgressBar
 
@@ -16,7 +16,7 @@ class TQDMProgressBar(ProgressBar):
         if self.progress_bar is not None:
             raise AssertionError("start can only be called once!")
 
-        self.progress_bar = tqdm.tqdm(total=self.length, **self.tqdm_args)
+        self.progress_bar = tqdm(total=self.length, **self.tqdm_args)
 
     def update(self, delta_processed=1):
         self.progress_bar.update(delta_processed)
