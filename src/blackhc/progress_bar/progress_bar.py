@@ -16,3 +16,7 @@ class ProgressBar(abc.ABC):
     @abc.abstractmethod
     def finish(self):
         pass
+
+    @abc.abstractmethod
+    def reset(self):
+        pass

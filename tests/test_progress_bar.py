@@ -22,7 +22,34 @@ def test_tqdm_coverage():
         pass
 
 
+def test_tqdm_reset_coverage():
+    pb.use_tqdm = True
+
+    pbar = pb.create_progress_bar(100)
+    pbar.start()
+    pbar.reset()
+
+    pbar.update(50)
+    pbar.reset()
+    pbar.update(50)
+    pbar.update(50)
+    pbar.finish()
+
+
 def test_log_friendly_coverage():
     pb.use_tqdm = False
     for _ in pb.with_progress_bar(range(100)):
         pass
+
+def test_log_friendly_reset_coverage():
+    pb.use_tqdm = False
+
+    pbar = pb.create_progress_bar(100)
+    pbar.start()
+    pbar.reset()
+
+    pbar.update(50)
+    pbar.reset()
+    pbar.update(50)
+    pbar.update(50)
+    pbar.finish()

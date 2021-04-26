@@ -25,6 +25,9 @@ class TQDMProgressBar(ProgressBar):
         self.progress_bar.close()
         self.progress_bar = None
 
+    def reset(self):
+        self.progress_bar.reset()
+
 
 class LogFriendlyProgressBar(ProgressBar):
     num_sections = 10
@@ -82,6 +85,20 @@ class LogFriendlyProgressBar(ProgressBar):
         remaining_elements = self.length - self.num_processed
         if remaining_elements > 0:
             self.update(remaining_elements)
+
+    def reset(self):
+        if self.num_processed == 0:
+            return
+
+        LogFriendlyProgressBar.print()
+        LogFriendlyProgressBar.print("PROGRESS BAR RESET")
+
+        self.start_time = None
+        self.last_time = None
+        self.num_processed = 0
+        self.num_finished_sections = 0
+
+        self.start()
 
     @staticmethod
     def print_header(num_iterations):
